@@ -68,5 +68,6 @@ fi
 git fetch origin "${shas[@]}"
 git merge --no-commit "${shas[@]}"
 git commit --message "Merged Pull Requests (${shas[*]})"
+git push origin $PULL_REQUEST_LABEL
 
 echo "Merged ${#shas[@]} pull requests"
