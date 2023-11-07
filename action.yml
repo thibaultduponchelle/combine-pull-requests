@@ -20,6 +20,10 @@ inputs:
     description: 'The GitHub token'
     required: true
     default: 'experiment'
+  push-to-label:
+    description: 'If true this action will push to label branch'
+    required: false
+    default: 'false'
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -28,4 +32,5 @@ runs:
     GITHUB_TOKEN: ${{ inputs.repo-token }}
     GIT_AUTHOR_NAME: ${{ inputs.author-name }}
     GIT_AUTHOR_EMAIL: ${{ inputs.author-email }}
+    PUSH_TO_LABEL: ${{ inputs.push-to-label }}
 
