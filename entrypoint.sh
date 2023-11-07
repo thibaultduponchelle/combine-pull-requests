@@ -70,7 +70,7 @@ git merge --no-commit "${shas[@]}"
 git commit --message "Merged Pull Requests (${shas[*]})"
 
 # Push to label branch if requested
-if [ "$PUSH_TO_LABEL" == 'true' ]; then
+if [ "${PUSH_TO_LABEL}" == 'true' ]; then
     git push origin $PULL_REQUEST_LABEL
 fi
 
